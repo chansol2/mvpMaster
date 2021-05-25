@@ -1,5 +1,5 @@
 <div class="navbar-container d-none d-md-block">
-  <nav class="upper">
+  <nav class="upper pt-2">
     <div class="container">
       <div class="row justify-content-end align-items-center">
         <a class="col-4 navbar-brand text-center" href="/"
@@ -25,16 +25,45 @@
   </nav>
   <nav class="lower">
     <div class="container category-bar">
-      <div class="row justify-content-center">
-        <div class="col-10 d-flex justify-content-evenly">
-          <div><a href="#">홈카페</a></div>
-          <div><a href="#">집돌이/집순이</a></div>
-          <div><a href="#">홈파티</a></div>
-          <div><a href="#">원룸PC방</a></div>
-          <div><a href="#">침실가구</a></div>
-          <div><a href="#">거실가구</a></div>
-          <div><a href="#">수납가구</a></div>
-          <div><a href="#">서재가구</a></div>
+      <div class="row justify-content-center position-relative">
+        <div class="ff col-10 d-flex justify-content-evenly">
+          <div class="">
+            <a class="toggle-dropdown" aria-label="cafe" href="#">홈카페</a>
+            <%- include('dropdown/cafe') %>
+          </div>
+          <div>
+            <a class="toggle-dropdown" aria-label="home" href="#"
+              >집돌이/집순이</a
+            >
+            <%- include('dropdown/home') %>
+          </div>
+
+          <div>
+            <a class="toggle-dropdown" aria-label="party" href="#">홈파티</a>
+            <%- include('dropdown/party') %>
+          </div>
+          <div>
+            <a class="toggle-dropdown" aria-label="game" href="#">원룸PC방</a>
+            <%- include('dropdown/game') %>
+          </div>
+          <div>
+            <a class="toggle-dropdown" aria-label="bed" href="#">침실가구</a>
+            <%- include('dropdown/bed') %>
+          </div>
+          <div>
+            <a class="toggle-dropdown" aria-label="living" href="#">거실가구</a>
+            <%- include('dropdown/living') %>
+          </div>
+          <div>
+            <a class="toggle-dropdown" aria-label="storage" href="#"
+              >수납가구</a
+            >
+            <%- include('dropdown/storage') %>
+          </div>
+          <div>
+            <a class="toggle-dropdown" aria-label="book" href="#">서재가구</a>
+            <%- include('dropdown/book') %>
+          </div>
         </div>
       </div>
     </div>
