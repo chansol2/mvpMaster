@@ -1,11 +1,12 @@
 const express = require("express");
 const path = require("path");
+const https = require("https");
+const req_modules = require("./modules/req_modules");
+const priceFormat = require("./modules/price-format.js");
 const API_rcmd = require("./rcmd.js");
 
 const app = express();
 
-// single product list,
-// 1:bed, 2:living, 3:storage
 var spl_1, spl_2, spl_3;
 
 app.set("views", path.join(__dirname, "views"));

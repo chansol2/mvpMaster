@@ -92,6 +92,7 @@ $(".rcmd-large").on("click", function (event) {
 });
 
 $(".rcmd-middle a").on("click", function (event) {
+  event.preventDefault();
   event.stopPropagation();
   console.log(event);
 });
