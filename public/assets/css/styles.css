@@ -240,6 +240,11 @@ body {
   border: none;
 }
 
+.rcmd-large button.active {
+  -webkit-box-shadow: 0 0 10px grey;
+  box-shadow: 0 0 10px grey;
+}
+
 .rcmd-large:hover button {
   -webkit-box-shadow: 0 0 10px grey;
   box-shadow: 0 0 10px grey;
@@ -329,6 +334,9 @@ body {
 
 .rcmd-middle div > * {
   vertical-align: middle;
+}
+.rcmd-section .rcmd-section-sub.active {
+  display: block !important;
 }
 
 .rcmd-text {

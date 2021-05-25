@@ -87,12 +87,19 @@ $("a").on("click", function (event) {
 
 $(".rcmd-large").on("click", function (event) {
   event.stopPropagation();
+  $(".rcmd-large-container").find("button").removeClass("active");
+  $($(event.currentTarget).children()[0]).addClass("active");
+
+  $(".rcmd-section").children().removeClass("active");
+
+  let targetID = $($(event.currentTarget).children()[1]).attr("href");
+  $(targetID).addClass("active");
+
   $("a").removeClass("active");
-  $($(event.currentTarget).children()[1]).addClass("active");
+  $($(targetID).find("a")[0]).addClass("active");
 });
 
 $(".rcmd-middle a").on("click", function (event) {
   event.preventDefault();
   event.stopPropagation();
-  console.log(event);
 });
