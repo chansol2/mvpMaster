@@ -8,7 +8,7 @@ const API_prds = require("./productList.js");
 
 const app = express();
 
-var spl_1, spl_2, spl_3, spl, cid;
+var spl_1, spl_2, spl_3, spl, cid, o_url;
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -44,6 +44,13 @@ app.get("/product/:cid", async function (req, res) {
   } else {
     res.redirect("/");
   }
+});
+
+app.get("/product/:cid/detail", function (req, res) {
+  o_url = req.query.o_url;
+  res.render("products/product-detail", {
+    o_url: o_url,
+  });
 });
 
 app.listen(8080, function () {

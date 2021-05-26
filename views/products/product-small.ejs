@@ -1,11 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+<html lang="ko">
+  <!--Header-->
+  <%- include('../common/header'); -%>
   <body>
-    <h1>small</h1>
+    <%- include ('../navs/navbar-main') -%>
+    <div class="container">
+      <div class="d-flex flex-column">
+        <div class="small-card-section row">
+          <div class="row">
+            <div class="col-12">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">침실가구</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#">일반침대</a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6"><h4>침대</h4></div>
+            <div class="col-6">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12"><p>결과파트</p></div>
+          </div>
+          <div class="row">
+            <% for (let i = 0; i < spl.length; i++) { %>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6 pr-1 pl-2">
+              <div class="product">
+                <div class="thumb">
+                  <a
+                    href="/product/<%= spl[i].cate_id %>/detail?pid=<%= spl[i].id %>&o_url=<%= spl[i].org_url%>"
+                    ><img src="<%= spl[i].img_url %>" alt="product img"
+                  /></a>
+                </div>
+                <div class="content">
+                  <p class="source"><%= spl[i].seller_nm %></p>
+                  <p class="p-title"><%= spl[i].prd_nm %></p>
+                  <div class="price"><%= spl[i].sales_price %>원</div>
+                </div>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Footer-->
+    <%- include('../common/footer'); -%>
   </body>
 </html>
