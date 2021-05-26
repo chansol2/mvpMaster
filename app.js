@@ -4,10 +4,11 @@ const https = require("https");
 const req_modules = require("./modules/req_modules");
 const priceFormat = require("./modules/price-format.js");
 const API_rcmd = require("./rcmd.js");
+const API_prds = require("./productList.js");
 
 const app = express();
 
-var spl_1, spl_2, spl_3;
+var spl_1, spl_2, spl_3, spl, cid;
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -24,6 +25,25 @@ app.get("/", async function (req, res) {
     spl_2: spl_2,
     spl_3: spl_3,
   });
+});
+
+app.get("/product/:cid", async function (req, res) {
+  cid = req.params.cid;
+  if (cid.length == 3) {
+    console.log(__dirname);
+    spl = await API_prds.getProducts("10101");
+    res.render("products/product-medium", {
+      spl: spl,
+    });
+  } else if (cid.length == 5) {
+    console.log(__dirname);
+    spl = await API_prds.getProducts("10101");
+    res.render("products/product-small", {
+      spl: spl,
+    });
+  } else {
+    res.redirect("/");
+  }
 });
 
 app.listen(8080, function () {

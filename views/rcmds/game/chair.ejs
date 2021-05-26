@@ -1,127 +1,23 @@
-<div class="rcmd-section-sub d-none" id="r-game">
-  <div class="row rcmd-middle">
-    <div>
-      <a class="active" href="#">게이밍의자</a>
-      <a href="#">게이밍책상</a>
-      <a href="#">PC방 소품</a>
-    </div>
+<div class="rcmd-item row d-none active" id="r-game-chair">
+  <div class="explore-more col-12 mb-3 text-end">
+    <a href="#">게이밍의자 더보기 →</a>
   </div>
-  <br />
-  <div class="row">
-    <div class="explore-more col-12 mb-3 text-end">
-      <a href="#">게이밍의자 더보기 →</a>
-    </div>
-    <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
-      <div class="product">
-        <div class="thumb">
-          <a href=""><img src="assets/images/sample.jpeg" alt="logo" /></a>
-        </div>
-        <div class="content">
-          <p class="source">오늘의집</p>
-          <p class="p-title">
-            포엠 호텔침대 Q 퀸/ K 킹 패널형 (색상2종, 매트별도)
-          </p>
-          <div class="price">531,000원</div>
-        </div>
+
+  <% for (let i = 0; i < 8; i++) { %>
+  <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
+    <div class="product">
+      <div class="thumb">
+        <a
+          href="/product/<%= spl_1[i].cate_id %>/detail?pid=<%= spl_1[i].id %>&o_url=<%= spl_1[i].org_url%>"
+          ><img src="<%= spl_1[i].img_url %>" alt="product img"
+        /></a>
       </div>
-    </div>
-    <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
-      <div class="product">
-        <div class="thumb">
-          <a href=""><img src="assets/images/sample.jpeg" alt="logo" /></a>
-        </div>
-        <div class="content">
-          <p class="source">오늘의집</p>
-          <p class="p-title">
-            포엠 호텔침대 Q 퀸/ K 킹 패널형 (색상2종, 매트별도)
-          </p>
-          <div class="price">531,000원</div>
-        </div>
-      </div>
-    </div>
-    <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
-      <div class="product">
-        <div class="thumb">
-          <a href=""><img src="assets/images/sample.jpeg" alt="logo" /></a>
-        </div>
-        <div class="content">
-          <p class="source">오늘의집</p>
-          <p class="p-title">
-            포엠 호텔침대 Q 퀸/ K 킹 패널형 (색상2종, 매트별도)
-          </p>
-          <div class="price">531,000원</div>
-        </div>
-      </div>
-    </div>
-    <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
-      <div class="product">
-        <div class="thumb">
-          <a href=""><img src="assets/images/sample.jpeg" alt="logo" /></a>
-        </div>
-        <div class="content">
-          <p class="source">오늘의집</p>
-          <p class="p-title">
-            포엠 호텔침대 Q 퀸/ K 킹 패널형 (색상2종, 매트별도)
-          </p>
-          <div class="price">531,000원</div>
-        </div>
-      </div>
-    </div>
-    <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
-      <div class="product">
-        <div class="thumb">
-          <a href=""><img src="assets/images/sample.jpeg" alt="logo" /></a>
-        </div>
-        <div class="content">
-          <p class="source">오늘의집</p>
-          <p class="p-title">
-            포엠 호텔침대 Q 퀸/ K 킹 패널형 (색상2종, 매트별도)
-          </p>
-          <div class="price">531,000원</div>
-        </div>
-      </div>
-    </div>
-    <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
-      <div class="product">
-        <div class="thumb">
-          <a href=""><img src="assets/images/sample.jpeg" alt="logo" /></a>
-        </div>
-        <div class="content">
-          <p class="source">오늘의집</p>
-          <p class="p-title">
-            포엠 호텔침대 Q 퀸/ K 킹 패널형 (색상2종, 매트별도)
-          </p>
-          <div class="price">531,000원</div>
-        </div>
-      </div>
-    </div>
-    <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
-      <div class="product">
-        <div class="thumb">
-          <a href=""><img src="assets/images/sample.jpeg" alt="logo" /></a>
-        </div>
-        <div class="content">
-          <p class="source">오늘의집</p>
-          <p class="p-title">
-            포엠 호텔침대 Q 퀸/ K 킹 패널형 (색상2종, 매트별도)
-          </p>
-          <div class="price">531,000원</div>
-        </div>
-      </div>
-    </div>
-    <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
-      <div class="product">
-        <div class="thumb">
-          <a href=""><img src="assets/images/sample.jpeg" alt="logo" /></a>
-        </div>
-        <div class="content">
-          <p class="source">오늘의집</p>
-          <p class="p-title">
-            포엠 호텔침대 Q 퀸/ K 킹 패널형 (색상2종, 매트별도)
-          </p>
-          <div class="price">531,000원</div>
-        </div>
+      <div class="content">
+        <p class="source"><%= spl_1[i].seller_nm %></p>
+        <p class="p-title"><%= spl_1[i].prd_nm %></p>
+        <div class="price"><%= spl_1[i].sales_price %>원</div>
       </div>
     </div>
   </div>
+  <% } %>
 </div>

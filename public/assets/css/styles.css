@@ -226,8 +226,21 @@ body {
   font-weight: 700;
   padding-top: 5px;
 }
+.rcmd-item.active {
+  display: flex !important;
+}
+
+.rcmd-large {
+  z-index: 1;
+}
 
 .rcmd-large a {
+  padding-top: 0.5rem;
+  font-size: 18px;
+  color: #000;
+}
+
+.rcmd-large p {
   padding-top: 0.5rem;
   font-size: 18px;
   color: #000;
@@ -283,7 +296,7 @@ body {
     width: 5rem;
     height: 5rem;
   }
-  .rcmd-large a {
+  .rcmd-large p {
     font-size: 14px;
   }
 }
@@ -293,7 +306,7 @@ body {
     height: 4rem;
   }
 
-  .rcmd-large a {
+  .rcmd-large p {
     font-size: 11px;
   }
 }

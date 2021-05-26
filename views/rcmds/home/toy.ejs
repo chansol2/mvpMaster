@@ -1,0 +1,23 @@
+<div class="rcmd-item row d-none" id="r-home-toy">
+  <div class="explore-more col-12 mb-3 text-end">
+    <a href="#">집콕놀거리 더보기 →</a>
+  </div>
+
+  <% for (let i = 0; i < 8; i++) { %>
+  <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
+    <div class="product">
+      <div class="thumb">
+        <a
+          href="/product/<%= spl_2[i].cate_id %>/detail?pid=<%= spl_2[i].id %>&o_url=<%= spl_2[i].org_url%>"
+          ><img src="<%= spl_2[i].img_url %>" alt="product img"
+        /></a>
+      </div>
+      <div class="content">
+        <p class="source"><%= spl_2[i].seller_nm %></p>
+        <p class="p-title"><%= spl_2[i].prd_nm %></p>
+        <div class="price"><%= spl_2[i].sales_price %>원</div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>

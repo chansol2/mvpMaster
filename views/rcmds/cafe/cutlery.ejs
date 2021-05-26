@@ -1,0 +1,23 @@
+<div class="rcmd-item row d-none" id="r-cafe-cutlery">
+  <div class="explore-more col-12 mb-3 text-end">
+    <a href="#">갬성식기 더보기 →</a>
+  </div>
+
+  <% for (let i = 0; i < 8; i++) { %>
+  <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
+    <div class="product">
+      <div class="thumb">
+        <a
+          href="/product/<%= spl_3[i].cate_id %>/detail?pid=<%= spl_3[i].id %>&o_url=<%= spl_3[i].org_url%>"
+          ><img src="<%= spl_3[i].img_url %>" alt="product img"
+        /></a>
+      </div>
+      <div class="content">
+        <p class="source"><%= spl_3[i].seller_nm %></p>
+        <p class="p-title"><%= spl_3[i].prd_nm %></p>
+        <div class="price"><%= spl_3[i].sales_price %>원</div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>
