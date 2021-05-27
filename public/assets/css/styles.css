@@ -1,3 +1,7 @@
+img {
+  z-index: -1;
+}
+
 a {
   color: #03c04a;
   text-decoration: none;
@@ -12,13 +16,69 @@ body {
   margin: 0;
 }
 
+.c-num-1 .c1 {
+  background-color: transparent;
+  border-radius: 10px;
+  border: solid 1.5px #c2c2c2;
+  overflow: hidden;
+}
+
+.c-num-1 .c2 {
+  background-color: transparent;
+  border-radius: 10px;
+  border: solid 1.5px #c2c2c2;
+  overflow: hidden;
+}
+
+.c-num-2 .c1 {
+  border: solid 1.5px #c2c2c2;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.c-num-2 .c2 {
+  background-color: #c2c2c2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.c-num-2 .c3 {
+  background-color: #c2c2c2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.c-num-3 .c1 {
+  height: 60%;
+  background-color: black;
+  overflow: hidden;
+}
+
+.c-num-3 .c2 {
+  background-color: white;
+  height: 40%;
+}
+
+.c-med {
+  border-bottom: solid 1.5px #c2c2c2;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #f5f5f5;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 .category-bar {
   /* background-color: #03c04a; */
 }
 
 .category-bar a {
   font-size: 14px;
-  line-height: 60px;
+  /* line-height: 60px; */
   font-weight: 400;
   text-decoration: none;
   letter-spacing: 0.5px;
@@ -30,13 +90,23 @@ body {
   display: block !important;
 }
 
+.cmn-col {
+  border: solid 1.5px #c2c2c2;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  width: 47%;
+  margin-bottom: 0.5rem;
+}
+
 .content {
   padding: 8px 12px 0;
 }
 
-.dropdown-category {
+/* .dropdown-category {
   flex-basis: 630px;
-}
+} */
 
 .dropdown-category a:hover {
   color: #03c04a;
@@ -81,6 +151,58 @@ body {
   }
 }
 
+.iframe-buy {
+  z-index: 1;
+  bottom: 100px;
+  right: 100px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 120%;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.iframe-button-text {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 368px) {
+  .iframe-button-text {
+    font-size: 11.5px;
+  }
+}
+
+.iframe-logo {
+  width: 100px;
+}
+
+.iframe-navbar {
+  z-index: 1;
+  background-color: white;
+}
+
+.iframe-navbar-mobile {
+  z-index: 1;
+  background-color: #03c04a;
+}
+
 .left-arrow {
   left: 15px;
 }
@@ -106,7 +228,7 @@ body {
 
 .main-banner {
   height: 750px;
-  background-color: red;
+  background-color: greenyellow;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
   .main-banner {
@@ -145,12 +267,14 @@ body {
   left: 50%;
   transform: translate(-50%);
   padding: 20px 10px 30px 10px;
-  box-shadow: 0px -1px 1px lightgrey;
-  background-color: #ebebeb;
+  box-shadow: 0px 0px 3px lightgrey;
+  background-color: white;
   z-index: 1;
 }
 
 .mega-menu-content {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .mobile-navbar-icon {
@@ -166,6 +290,7 @@ body {
   background-color: white;
   /* overflow: auto; */
   transition: left 0.5s;
+  z-index: 1;
 }
 
 .mobile-toggle-menu-container.open {
@@ -226,13 +351,35 @@ body {
   font-weight: 700;
   padding-top: 5px;
 }
+
+@media only screen and (max-width: 575px) {
+  .price {
+    font-size: 16px;
+  }
+}
+
+.product {
+  overflow: hidden;
+}
+
+.product .thumb {
+  overflow: hidden;
+  position: relative;
+}
+
+.product .thumb .image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
 .rcmd-item.active {
   display: flex !important;
 }
 
-.rcmd-large {
+/* .rcmd-large {
   z-index: 1;
-}
+} */
 
 .rcmd-large a {
   padding-top: 0.5rem;
@@ -356,6 +503,12 @@ body {
   padding-left: 3rem;
 }
 
+@media only screen and (max-width: 767px) {
+  .rcmd-text {
+    padding-left: 1rem;
+  }
+}
+
 @media only screen and (max-width: 575px) {
   .rcmd-product {
     flex: 0 0 auto;
@@ -384,10 +537,9 @@ body {
   right: 0;
 }
 
-.small-card-section img {
-  max-width: 100%;
-  max-height: 100%;
-  /* height: auto; */
+.small-card {
+  width: 90%;
+  display: block;
 }
 
 .source {
@@ -396,7 +548,15 @@ body {
   color: #999999;
 }
 
-.thumb img {
+.sub-text {
+  font-size: 12px;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thumb .image {
   width: 100%;
   border-radius: 8px;
   vertical-align: middle;

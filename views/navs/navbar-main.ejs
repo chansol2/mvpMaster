@@ -29,7 +29,7 @@
   <nav class="lower">
     <div class="container category-bar">
       <div class="row justify-content-center position-relative">
-        <div class="ff col-10 d-flex justify-content-evenly">
+        <div class="toggle-container col-10 d-flex justify-content-evenly">
           <div class="">
             <a class="toggle-dropdown" aria-label="cafe" href="#">홈카페</a>
             <%- include('dropdown/cafe') %>
@@ -76,8 +76,12 @@
 <nav class="d-md-none">
   <div class="container">
     <div class="row">
-      <button class="btn col-3 mobile-navbar-icon" id="hamburger" type="button">
-        <i class="fas fa-bars"></i>
+      <button
+        class="d-flex align-items-center justify-content-start btn col-3 mobile-navbar-icon"
+        id="hamburger"
+        type="button"
+      >
+        <i class="fas fa-bars ps-2"></i>
       </button>
       <a class="col-6 navbar-brand text-center" href="/"
         ><img class="logo" src="../assets/images/logo/logo.png" alt="Main Logo"

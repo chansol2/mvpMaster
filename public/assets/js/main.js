@@ -57,9 +57,11 @@ $(".back").on("click", function (event) {
 $(".toggle-dropdown").on("click", function (event) {
   event.stopPropagation();
 
-  $target = $(".ff").children();
+  $target = $(".toggle-container").children();
   $target.removeClass("active");
+  $(".toggle-dropdown").removeClass("active");
   if (!$($(this).parent()).hasClass("active")) {
+    $(this).addClass("active");
     $($(this).parent()).addClass("active");
   } else {
     console.log("error");
@@ -71,20 +73,12 @@ $(".toggle-dropdown").on("click", function (event) {
 $(document).on("click", function (event) {
   event.stopPropagation();
   if (!$(event.target).hasClass("dropdown-id")) {
-    $target = $(".ff").children();
+    $target = $(".toggle-container").children();
     $target.removeClass("active");
 
     //note
     // $("a").removeClass("active");
   }
-});
-
-//note
-$("a").on("click", function (event) {
-  event.stopPropagation();
-  // event.preventDefault();
-  $("a").removeClass("active");
-  $(event.currentTarget).addClass("active");
 });
 
 $(".rcmd-large").on("click", function (event) {
@@ -123,6 +117,9 @@ $(".rcmd-large").on("click", function (event) {
 $(".rcmd-med-btn").on("click", function (e) {
   e.stopPropagation();
   e.preventDefault();
+
+  $($(this).siblings()).removeClass("active");
+  $(this).addClass("active");
 
   //클릭된 중분류 버튼에서 name attr을 가져와 알맞은 rcmd-product-container을 찾은 후, 모든 children active class 제거해주기
   let target = ".rcmd-product-container-" + $(this).attr("name");

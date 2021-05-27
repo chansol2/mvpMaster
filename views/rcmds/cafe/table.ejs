@@ -4,12 +4,12 @@
   </div>
 
   <% for (let i = 0; i < 8; i++) { %>
-  <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 mb-5 ps-2 pe-1">
+  <div class="rcmd-product col-lg-3 col-md-6 col-sm-6 col-6 mb-5 ps-2 pe-1">
     <div class="product">
       <div class="thumb">
         <a
           href="/product/<%= spl_1[i].cate_id %>/detail?pid=<%= spl_1[i].id %>&o_url=<%= spl_1[i].org_url%>"
-          ><img src="<%= spl_1[i].img_url %>" alt="product img"
+          ><img class="image" src="<%= spl_1[i].img_url %>" alt="product img"
         /></a>
       </div>
       <div class="content">
