@@ -57,6 +57,7 @@ $(".back").on("click", function (event) {
 $(".toggle-dropdown").on("click", function (event) {
   event.stopPropagation();
 
+  $(this).addClass("active");
   $target = $(".toggle-container").children();
   $target.removeClass("active");
   $(".toggle-dropdown").removeClass("active");

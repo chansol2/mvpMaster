@@ -1,5 +1,5 @@
 <div class="navbar-container d-none d-md-block">
-  <nav class="upper pt-2">
+  <nav class="upper py-2">
     <div class="container">
       <div class="row justify-content-end align-items-center">
         <a class="col-4 navbar-brand text-center" href="/"
@@ -26,54 +26,50 @@
       </div>
     </div>
   </nav>
-  <nav class="lower">
-    <div class="container category-bar">
-      <div class="row justify-content-center position-relative">
-        <div class="toggle-container col-10 d-flex justify-content-evenly">
-          <div class="">
-            <a class="toggle-dropdown" aria-label="cafe" href="#">홈카페</a>
-            <%- include('dropdown/cafe') %>
-          </div>
-          <div>
-            <a class="toggle-dropdown" aria-label="home" href="#"
-              >집돌이/집순이</a
-            >
-            <%- include('dropdown/home') %>
-          </div>
+  <nav class="lower category-bar">
+    <div class="container d-flex justify-content-center">
+      <div class="position-relative toggle-container d-flex">
+        <div class="">
+          <a class="toggle-dropdown" aria-label="cafe" href="#">홈카페</a>
+          <%- include('dropdown/cafe') %>
+        </div>
+        <div>
+          <a class="toggle-dropdown" aria-label="home" href="#"
+            >집돌이/집순이</a
+          >
+          <%- include('dropdown/home') %>
+        </div>
 
-          <div>
-            <a class="toggle-dropdown" aria-label="party" href="#">홈파티</a>
-            <%- include('dropdown/party') %>
-          </div>
-          <div>
-            <a class="toggle-dropdown" aria-label="game" href="#">원룸PC방</a>
-            <%- include('dropdown/game') %>
-          </div>
-          <div>
-            <a class="toggle-dropdown" aria-label="bed" href="#">침실가구</a>
-            <%- include('dropdown/bed') %>
-          </div>
-          <div>
-            <a class="toggle-dropdown" aria-label="living" href="#">거실가구</a>
-            <%- include('dropdown/living') %>
-          </div>
-          <div>
-            <a class="toggle-dropdown" aria-label="storage" href="#"
-              >수납가구</a
-            >
-            <%- include('dropdown/storage') %>
-          </div>
-          <div>
-            <a class="toggle-dropdown" aria-label="book" href="#">서재가구</a>
-            <%- include('dropdown/book') %>
-          </div>
+        <div>
+          <a class="toggle-dropdown" aria-label="party" href="#">홈파티</a>
+          <%- include('dropdown/party') %>
+        </div>
+        <div>
+          <a class="toggle-dropdown" aria-label="game" href="#">원룸PC방</a>
+          <%- include('dropdown/game') %>
+        </div>
+        <div>
+          <a class="toggle-dropdown" aria-label="bed" href="#">침실가구</a>
+          <%- include('dropdown/bed') %>
+        </div>
+        <div>
+          <a class="toggle-dropdown" aria-label="living" href="#">거실가구</a>
+          <%- include('dropdown/living') %>
+        </div>
+        <div>
+          <a class="toggle-dropdown" aria-label="storage" href="#">수납가구</a>
+          <%- include('dropdown/storage') %>
+        </div>
+        <div>
+          <a class="toggle-dropdown" aria-label="book" href="#">서재가구</a>
+          <%- include('dropdown/book') %>
         </div>
       </div>
     </div>
   </nav>
 </div>
 
-<nav class="d-md-none">
+<nav class="d-md-none navbar-container">
   <div class="container">
     <div class="row">
       <button
