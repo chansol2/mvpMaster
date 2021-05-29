@@ -5,10 +5,13 @@ const req_modules = require("./modules/req_modules");
 const priceFormat = require("./modules/price-format.js");
 const API_rcmd = require("./rcmd.js");
 const API_prds = require("./productList.js");
+const map = require("./modules/map.js");
 
 const app = express();
 
-var spl_1, spl_2, spl_3, spl, cid, o_url;
+var spl_1, spl_2, spl_3, spl, cid, o_url, curr_sort, largeC, medC, smallC;
+
+let sort_options = ["인기순", "리뷰순", "평점순", "가격낮은순", "가격높은순"];
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -29,17 +32,35 @@ app.get("/", async function (req, res) {
 
 app.get("/product/:cid", async function (req, res) {
   cid = req.params.cid;
-  if (cid.length == 3) {
+  curr_sort = Number(req.query.sort);
+  if (cid.length == 3 || cid.length == 4) {
     console.log(__dirname);
+    if (cid.length === 3) {
+      largeC = map.large[cid.substring(0, 1)];
+    } else {
+      largeC = map.large[cid.substring(0, 2)];
+    }
+
+    medC = map.med[cid];
+
     spl = await API_prds.getProducts("10101");
     res.render("products/product-medium", {
       spl: spl,
+      sort_options: sort_options,
+      curr_sort: curr_sort,
+      largeC,
+      medC,
     });
   } else if (cid.length == 5) {
     console.log(__dirname);
     spl = await API_prds.getProducts("10101");
     res.render("products/product-small", {
       spl: spl,
+      sort_options: sort_options,
+      curr_sort: curr_sort,
+      largeC: map.large[cid.substring(0, 1)],
+      medC: map.med[cid.substring(0, 3)],
+      smallC: map.small[cid],
     });
   } else {
     res.redirect("/");

@@ -2,84 +2,46 @@
 
 $("#hamburger,#escape").on("click", function (event) {
   if (this.id === "hamburger") {
-    $(".mobile-toggle-menu-container.main").addClass("open");
+    $(".mobile-toggle-container").addClass("open");
   } else {
-    $(".mobile-toggle-menu-container.main").removeClass("open");
-    $(".mobile-toggle-menu-container.sub-menu").removeClass("open");
+    $(".mobile-toggle-container").removeClass("open");
+    $(".mobile-toggle-container-sub").removeClass("open");
   }
 });
 
 // 대분류 아이템 클릭 시, 다음 뎊쓰 뷰로 이동되는 로직
 
-$(".mobile-toggle-menu-column > .item").on("click", function (event) {
+$(".l-cate > .item").on("click", function (event) {
   event.stopPropagation();
-  let itemID = this.id;
-  switch (itemID) {
-    case "cafe":
-      $(".sub-menu.cafe").addClass("open");
-      break;
-    case "home":
-      $(".sub-menu.home").addClass("open");
-      break;
-    case "party":
-      $(".sub-menu.party").addClass("open");
-      break;
-    case "game":
-      $(".sub-menu.game").addClass("open");
-      break;
-    case "bed":
-      $(".sub-menu.bed").addClass("open");
-      break;
-    case "living":
-      $(".sub-menu.living").addClass("open");
-      break;
-    case "storage":
-      $(".sub-menu.storage").addClass("open");
-      break;
-    case "book":
-      $(".sub-menu.book").addClass("open");
-      break;
-    default:
-      console.log("error on toggle menu column");
-      break;
-  }
+  let itemID = $(this).attr("href");
+  $(itemID).addClass("open");
 });
 
 // 뒤로가기 버튼 눌렀을 시, 열려있는 중간 뎁쓰 창 닫는 로직
 
 $(".back").on("click", function (event) {
-  target = this.id;
-  $(".mobile-toggle-menu-container.sub-menu." + target).removeClass("open");
+  target = "#s-" + $(this).attr("name");
+  $(target).removeClass("open");
 });
 
 // 카테고리바에 a 버튼을 눌렀을 시, 해당 드롭다운 매뉴를 열어주는 로직
 
 $(".toggle-dropdown").on("click", function (event) {
   event.stopPropagation();
-
-  $(this).addClass("active");
-  $target = $(".toggle-container").children();
-  $target.removeClass("active");
   $(".toggle-dropdown").removeClass("active");
-  if (!$($(this).parent()).hasClass("active")) {
-    $(this).addClass("active");
-    $($(this).parent()).addClass("active");
-  } else {
-    console.log("error");
-  }
+  $(this).addClass("active");
+  $(".mega-menu").removeClass("active");
+  $($(this).siblings()).addClass("active");
 });
 
 //드롭다운 버튼, 또는 드롭다운 메뉴 밖을 눌럿을 경우 드롭다운 메뉴 꺼짐
 
 $(document).on("click", function (event) {
-  event.stopPropagation();
-  if (!$(event.target).hasClass("dropdown-id")) {
-    $target = $(".toggle-container").children();
-    $target.removeClass("active");
+  $(".mega-menu").removeClass("active");
+});
 
-    //note
-    // $("a").removeClass("active");
-  }
+$(".mega-menu").on("click", function (e) {
+  e.stopPropagation();
 });
 
 $(".rcmd-large").on("click", function (event) {
@@ -128,4 +90,18 @@ $(".rcmd-med-btn").on("click", function (e) {
 
   let id_ = $(this).attr("href");
   $(id_).addClass("active");
+});
+
+$("#p-sort").on("change", function (e) {
+  e.preventDefault();
+  let val = $(this).children("option:selected").val();
+  let currURL = "";
+
+  if (window.location.href.includes("?sort=")) {
+    currURL = window.location.href;
+    currURL = currURL.substring(0, currURL.length - 1);
+    window.location.href = currURL + val;
+  } else {
+    window.location.href = window.location.href + "?sort=" + val;
+  }
 });
