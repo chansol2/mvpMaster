@@ -48,18 +48,22 @@ app.get("/product/:cid", async function (req, res) {
       spl: spl,
       sort_options: sort_options,
       curr_sort: curr_sort,
-      largeC,
-      medC,
+      largeC: largeC,
+      medC: medC,
     });
   } else if (cid.length == 5) {
     console.log(__dirname);
     spl = await API_prds.getProducts("10101");
+
+    medKey = cid.substring(0, 3);
+
     res.render("products/product-small", {
       spl: spl,
       sort_options: sort_options,
       curr_sort: curr_sort,
       largeC: map.large[cid.substring(0, 1)],
-      medC: map.med[cid.substring(0, 3)],
+      medC: map.med[medKey],
+      medKey: medKey,
       smallC: map.small[cid],
     });
   } else {
