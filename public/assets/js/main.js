@@ -105,3 +105,11 @@ $("#p-sort").on("change", function (e) {
     window.location.href = window.location.href + "?sort=" + val;
   }
 });
+
+$("#search-icon").on("click", function () {
+  $(".mobile-search-container").addClass("open");
+});
+
+$(".search-escape").on("click", function () {
+  $(".mobile-search-container").removeClass("open");
+});

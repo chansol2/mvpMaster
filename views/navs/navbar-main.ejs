@@ -104,15 +104,25 @@
         ><img class="logo" src="../assets/images/logo/logo.png" alt="Main Logo"
       /></a>
       <div class="col-3 d-flex justify-content-end">
-        <form class="d-flex">
-          <button class="btn mobile-navbar-icon" type="submit">
+        <div class="d-flex" id="search-icon">
+          <button class="btn mobile-navbar-icon">
             <i class="fas fa-search"></i>
           </button>
-        </form>
+        </div>
       </div>
     </div>
   </div>
 </nav>
+
+<div class="mobile-search-container d-md-none">
+  <div class="d-flex" style="padding: 15px">
+    <div class="search-area">
+      <input type="text" placeholder="나인소 통합검색" />
+      <i class="fas fa-search"></i>
+    </div>
+    <button class="search-escape">취소</button>
+  </div>
+</div>
 
 <!-- mobile toggle menu -->
 <%- include ('navbar-mobile') -%>

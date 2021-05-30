@@ -1,0 +1,11 @@
+for (i = 0; i < child.length; i++) {
+          <div class="col-lg-3 col-md-3 col-sm-6 col-6 my-1 px-1">
+            <a class="small-card" href="product/<%= spl.child[i].cid %>">
+              <img
+                src="../../assets/images/small-category/<%= spl.child[i].cid %>.png"
+                alt="img"
+              />
+              <span> <%= spl.child.name %> </span>
+            </a>
+          </div>
+          }
