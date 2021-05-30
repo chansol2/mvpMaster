@@ -405,7 +405,7 @@ body {
   padding-top: 5px;
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 767px) {
   .price {
     font-size: 16px;
   }
