@@ -5,19 +5,19 @@
 
   <% for (let i = 0; i < 8; i++) { %>
   <div class="rcmd-product col-lg-3 col-md-3 col-sm-3 col-6 mb-5 ps-2 pe-1">
-    <div class="product">
+    <a
+      class="product"
+      href="/product/<%= spl_2[i].cate_id %>/detail?pid=<%= spl_2[i].id %>&o_url=<%= spl_2[i].org_url%>"
+    >
       <div class="thumb">
-        <a
-          href="/product/<%= spl_2[i].cate_id %>/detail?pid=<%= spl_2[i].id %>&o_url=<%= spl_2[i].org_url%>"
-          ><img class="image" src="<%= spl_2[i].img_url %>" alt="product img"
-        /></a>
+        <img class="image" src="<%= spl_2[i].img_url %>" alt="product img" />
       </div>
       <div class="content">
         <p class="source"><%= spl_2[i].seller_nm %></p>
         <p class="p-title"><%= spl_2[i].prd_nm %></p>
         <div class="price"><%= spl_2[i].sales_price %>원</div>
       </div>
-    </div>
+    </a>
   </div>
   <% } %>
 </div>

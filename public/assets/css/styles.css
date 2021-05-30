@@ -190,6 +190,7 @@ body {
 .footer-container {
   width: 100%;
   background-color: #fafafa;
+  padding: 30px 60px 40px;
 }
 
 .footer-container div {
@@ -488,6 +489,11 @@ body {
 
 .product {
   overflow: hidden;
+  color: #000;
+}
+
+.product:hover {
+  color: #000;
 }
 
 .product .thumb {
