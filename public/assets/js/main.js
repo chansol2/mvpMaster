@@ -13,7 +13,7 @@ $("#hamburger,#escape").on("click", function (event) {
 
 $(".l-cate > .item").on("click", function (event) {
   event.stopPropagation();
-  let itemID = $(this).attr("href");
+  let itemID = $(this).attr("name");
   $(itemID).addClass("open");
 });
 
