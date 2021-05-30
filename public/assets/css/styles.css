@@ -181,6 +181,27 @@ body {
   }
 }
 
+.footer-buttons a {
+  flex: 0 1 100px;
+  color: #737373;
+  font-size: 14px;
+}
+
+.footer-container {
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.footer-container div {
+  margin: 1rem 0;
+}
+
+.footer-container p {
+  margin: 0;
+  font-size: 12px;
+  color: #737373;
+}
+
 .iframe-container {
   position: relative;
   width: 100%;

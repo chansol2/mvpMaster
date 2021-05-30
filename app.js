@@ -9,7 +9,7 @@ const map = require("./modules/map.js");
 
 const app = express();
 
-var spl_1, spl_2, spl_3, spl, cid, o_url, curr_sort, largeC, medC, smallC;
+var spl_1, spl_2, spl_3, spl, cid, o_url, curr_sort, largeC, medC;
 
 let sort_options = ["인기순", "리뷰순", "평점순", "가격낮은순", "가격높은순"];
 
