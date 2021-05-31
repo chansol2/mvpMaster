@@ -253,6 +253,14 @@ body {
   background-color: white;
 }
 
+.item-page {
+  display: none;
+}
+
+.item-page.active {
+  display: flex;
+}
+
 .l-cate {
   border-bottom: solid 0.5px #f5f5f5;
 }

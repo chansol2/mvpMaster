@@ -113,3 +113,77 @@ $("#search-icon").on("click", function () {
 $(".search-escape").on("click", function () {
   $(".mobile-search-container").removeClass("open");
 });
+
+$(document).ready(function () {
+  $(".page-1").addClass("active");
+  $(".pagination li:nth-child(1)").addClass("disabled");
+  $(".pagination li:nth-child(2)").addClass("active");
+});
+
+$(".page-link").on("click", function (e) {
+  e.stopPropagation();
+  let target = $(this).html();
+  //find current active li tag
+  let curr = Number($(".page-item.active a").html());
+  let next = curr + 1;
+  let prev = curr - 1;
+  //find total page num
+  let p_num = $(".pagination").children().length - 2;
+  console.log(p_num);
+
+  if (target === "이전") {
+    //remove all disabled class from page-item class
+    $($(".pagination").children()).removeClass("disabled");
+    //remove all active class from page-item class
+    $($(".pagination").children()).removeClass("active");
+    //add active class to the prev page number
+    $($(".pagination").children()[prev]).addClass("active");
+    if (prev === 1) {
+      //add disabled class to its parent
+      $($(this).parent()).addClass("disabled");
+    }
+  } else if (target === "다음") {
+    //remove all disabled class from page-item class
+    $($(".pagination").children()).removeClass("disabled");
+    //remove all active class from page-item class
+    $($(".pagination").children()).removeClass("active");
+    //add active class to the next page number
+    $($(".pagination").children()[next]).addClass("active");
+    if (next === p_num) {
+      //add disabled class to its parent
+      $($(this).parent()).addClass("disabled");
+    }
+  } else {
+    if (target === "1") {
+      //remove all disabled class from page-item class
+      $($(".pagination").children()).removeClass("disabled");
+      //add disabled class to 이전 button
+      $($(".pagination").children()[0]).addClass("disabled");
+      //remove all active class from page-item class
+      $($(".pagination").children()).removeClass("active");
+      //add active to 1 button
+      $($(this).parent()).addClass("active");
+    } else if (target === String(p_num)) {
+      //remove all disabled class from page-item class
+      $($(".pagination").children()).removeClass("disabled");
+      //add disabled class to 다음 button
+      $($(".pagination").children()[p_num + 1]).addClass("disabled");
+      //remove all active class from page-item class
+      $($(".pagination").children()).removeClass("active");
+      //add active to the last num button
+      $($(this).parent()).addClass("active");
+    } else {
+      //remove all disabled class from page-item class
+      $($(".pagination").children()).removeClass("disabled");
+      //remove all active class from page-item class
+      $($(".pagination").children()).removeClass("active");
+      //add active to the last num button
+      $($(this).parent()).addClass("active");
+    }
+  }
+
+  curr = $($($(".page-item.active")).children()[0]).html();
+  let currClass = ".page-" + curr;
+  $(".item-page").removeClass("active");
+  $(currClass).addClass("active");
+});

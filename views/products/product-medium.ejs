@@ -58,33 +58,57 @@
         </div>
         <div class="row">
           <div class="col-12 text-muted" style="font-size: 12px">
-            <p>총 <%= spl.length %>개의 결과가 검색됐습니다.</p>
+            <p>총 <%= rst_len %>개의 결과가 검색됐습니다.</p>
           </div>
         </div>
-        <div class="row">
-          <% for (let i = 0; i < spl.length; i++) { %>
+
+        <% for (let i=0; i < spl.length; i++) { %>
+        <div class="item-page row page-<%= i + 1 %>">
+          <% for (let j = 0; j < spl[i].length; j++) { %>
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6 mb-5 pe-1 ps-2">
             <a
               class="product"
-              href="/product/<%= spl[i].cate_id %>/detail?pid=<%= spl[i].id %>&o_url=<%= spl[i].org_url%>"
+              href="/product/<%= spl[i][j].cate_id %>/detail?pid=<%= spl[i][j].id %>&o_url=<%= spl[i][j].org_url%>"
             >
               <div class="thumb">
                 <img
                   class="image"
-                  src="<%= spl[i].img_url %>"
+                  src="<%= spl[i][j].img_url %>"
                   alt="product img"
                 />
               </div>
               <div class="content">
-                <p class="source"><%= spl[i].seller_nm %></p>
-                <p class="p-title"><%= spl[i].prd_nm %></p>
-                <div class="price"><%= spl[i].sales_price %>원</div>
+                <p class="source"><%= spl[i][j].seller_nm %></p>
+                <p class="p-title"><%= spl[i][j].prd_nm %></p>
+                <div class="price"><%= spl[i][j].sales_price %>원</div>
               </div>
             </a>
           </div>
           <% } %>
         </div>
+        <% } %>
       </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <nav>
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="javascript:void(0)">이전</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="javascript:void(0)">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="javascript:void(0)">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="javascript:void(0)">3</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="javascript:void(0)">다음</a>
+          </li>
+        </ul>
+      </nav>
     </div>
 
     <!--footer-->

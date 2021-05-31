@@ -6,10 +6,11 @@ const priceFormat = require("./modules/price-format.js");
 const API_rcmd = require("./rcmd.js");
 const API_prds = require("./productList.js");
 const map = require("./modules/map.js");
+const pl_gen = require("./modules/pl-generator.js");
 
 const app = express();
 
-var spl_1, spl_2, spl_3, spl, cid, o_url, curr_sort, largeC, medC;
+var spl_1, spl_2, spl_3, spl, cid, o_url, curr_sort, largeC, medC, rst_len;
 
 let sort_options = ["인기순", "리뷰순", "평점순", "가격낮은순", "가격높은순"];
 
@@ -44,8 +45,14 @@ app.get("/product/:cid", async function (req, res) {
     medC = map.med[cid];
 
     spl = await API_prds.getProducts("10101");
+
+    rst_len = spl.length;
+
+    spl = pl_gen.pl_get(spl);
+
     res.render("products/product-medium", {
       spl: spl,
+      rst_len: rst_len,
       sort_options: sort_options,
       curr_sort: curr_sort,
       largeC: largeC,
@@ -55,10 +62,13 @@ app.get("/product/:cid", async function (req, res) {
     console.log(__dirname);
     spl = await API_prds.getProducts("10101");
 
+    rst_len = spl.length;
+
     medKey = cid.substring(0, 3);
 
     res.render("products/product-small", {
       spl: spl,
+      rst_len: rst_len,
       sort_options: sort_options,
       curr_sort: curr_sort,
       largeC: map.large[cid.substring(0, 1)],
