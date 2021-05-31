@@ -226,6 +226,7 @@ body {
   font-size: 18px;
   font-weight: bold;
 }
+
 /* 
 @media only screen and (max-width: 368px) {
   .iframe-button-text {
@@ -595,6 +596,7 @@ body {
 }
 
 .rcmd-middle {
+  height: 45px;
 }
 
 .rcmd-middle a {
