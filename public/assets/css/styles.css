@@ -244,6 +244,7 @@ body {
   background-color: white;
   height: 80px;
   width: 100%;
+  border-bottom: #000 1px solid;
 }
 
 .iframe-navbar-mobile {
