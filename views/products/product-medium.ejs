@@ -64,22 +64,23 @@
         <div class="row">
           <% for (let i = 0; i < spl.length; i++) { %>
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6 mb-5 pe-1 ps-2">
-            <div class="product">
+            <a
+              class="product"
+              href="/product/<%= spl[i].cate_id %>/detail?pid=<%= spl[i].id %>&o_url=<%= spl[i].org_url%>"
+            >
               <div class="thumb">
-                <a
-                  href="/product/<%= spl[i].cate_id %>/detail?pid=<%= spl[i].id %>&o_url=<%= spl[i].org_url%>"
-                  ><img
-                    class="image"
-                    src="<%= spl[i].img_url %>"
-                    alt="product img"
-                /></a>
+                <img
+                  class="image"
+                  src="<%= spl[i].img_url %>"
+                  alt="product img"
+                />
               </div>
               <div class="content">
                 <p class="source"><%= spl[i].seller_nm %></p>
                 <p class="p-title"><%= spl[i].prd_nm %></p>
                 <div class="price"><%= spl[i].sales_price %>원</div>
               </div>
-            </div>
+            </a>
           </div>
           <% } %>
         </div>
