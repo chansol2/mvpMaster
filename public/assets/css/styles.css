@@ -482,6 +482,17 @@ body {
   text-overflow: ellipsis;
 }
 
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #03c04a;
+  border-color: #03c04a;
+}
+
+.page-link {
+  color: #03c04a;
+}
+
 .price {
   line-height: 1;
   display: flex;
